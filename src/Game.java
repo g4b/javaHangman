@@ -1,11 +1,12 @@
 import java.util.Random;
+import java.util.Arrays;
 
 public class Game {
 
     int numGuesses;
     int randomIndex;
     String word;
-    String underscores;
+    String underscores = "";
 
     public Game(){
         this.numGuesses = 8;
@@ -25,7 +26,13 @@ public class Game {
                 this.numGuesses++;
             }
         }
+        this.underscores = Arrays.toString(undArray);
+        this.showUnd();
         this.numGuesses--;
+    }
+
+    public void showUnd(){
+        System.out.println(underscores);
     }
 
 }
