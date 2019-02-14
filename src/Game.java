@@ -12,7 +12,7 @@ public class Game {
         this.numGuesses = 8;
         String[] words = {"bunny", "shirt", "music", "zoology", "textbook", "xylophone", "graph"};
         this.randomIndex = new Random().nextInt(words.length);
-        this.word = words[randomIndex];
+        this.word = words[this.randomIndex];
         for (int i = 0; i < word.length(); i++){
             this.underscores += "_";
         }
@@ -26,7 +26,7 @@ public class Game {
                 this.numGuesses++;
             }
         }
-        this.underscores = Arrays.toString(undArray);
+        this.underscores = String.valueOf(undArray);
         this.showUnd();
         this.numGuesses--;
     }
