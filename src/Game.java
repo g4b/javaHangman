@@ -18,21 +18,32 @@ public class Game {
         }
     }
 
-    public void guessLetter(char letter){
-        char[] undArray = underscores.toCharArray();
+    public void setUnderscores(String underscores){
+        this.underscores = underscores;
+    }
+
+    public void guessLetter(String letter){
+        String[] undArray = new String[word.length()];
+        for (int i = 0; i < word.length(); i++){
+            undArray[i] = "_";
+        }
         for (int i = 0; i < word.length(); i++){
             if (word.substring(i, i + 1).equals(letter)){
                 undArray[i] = letter;
                 this.numGuesses++;
             }
         }
-        this.underscores = String.valueOf(undArray);
+        String newUnd = "";
+        for (int i = 0; i < undArray.length; i++){
+            newUnd += undArray[i];
+        }
         this.showUnd();
         this.numGuesses--;
     }
 
     public void showUnd(){
-        System.out.println(underscores);
+        System.out.println(this.underscores);
     }
 
 }
+ // I- I- I don't know where I am. I don't know where I am. Please, can anyone help me, I don't know where I am. I don't know where I am

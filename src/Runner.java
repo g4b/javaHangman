@@ -10,7 +10,7 @@ public class Runner {
             Scanner sc = new Scanner(System.in);
             System.out.println("Guess a letter:");
             if(sc.hasNextLine()){
-                char guess = sc.next(".").charAt(0);
+                String guess = sc.nextLine();
                 game.guessLetter(guess);
             } else {
                 System.out.println("Sorry, that wasn't a string. Please try again.");
